@@ -321,8 +321,16 @@ function getSumToN(n) {
  *   202 => 4  // (2+0+2)
  *   5   => 5  // 5
  */
-function getSumOfDigits(/* num */) {
-  throw new Error('Not implemented');
+function getSumOfDigits(num) {
+  const digits = num.toString().split('');
+
+  let sum = 0;
+
+  for (let i = 0; i < digits.length; i += 1) {
+    sum += Number(digits[i]);
+  }
+
+  return sum;
 }
 
 /**
@@ -633,9 +641,8 @@ function getRandomInteger(min, max) {
  * 3, 4 => 5
  */
 function getHypotenuse(a, b) {
-  return Math.sqrt(a ** 2 + b ** 2);
+  return Math.hypot(a, b);
 }
-console.log(getHypotenuse(3, 4));
 
 /**
  * Returns count of odd numbers from zero to the resulting number.
@@ -650,8 +657,8 @@ console.log(getHypotenuse(3, 4));
  * 10 => 5
  * 15 => 8
  */
-function getCountOfOddNumbers(/* number */) {
-  throw new Error('Not implemented');
+function getCountOfOddNumbers(number) {
+  return Math.floor((Math.abs(number) + 1) / 2);
 }
 
 module.exports = {
